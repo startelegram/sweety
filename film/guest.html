@@ -150,25 +150,22 @@
             from { opacity: 0; transform: translateX(-50px); }
             to { opacity: 1; transform: translateX(0); }
         }
-        /* إصلاح عرض "Free Palestine" */
-        .category-title {
-            font-size: 2rem;
-            font-weight: bold;
-            text-align: center;
-            margin-bottom: 20px;
-            color: #fff; /* لون النص الأبيض */
-            text-shadow: 0 0 5px #D90404, 0 0 10px #D90404; /* ظل نصي أحمر */
-            position: relative;
-            display: inline-block;
-            padding: 10px 20px;
-            background: linear-gradient(90deg, #000 25%, #fff 25%, #fff 50%, #D90404 50%, #D90404 75%, #1A3C34 75%); /* ألوان علم فلسطين */
-            background-size: 400%;
-            border-radius: 10px;
-            animation: flagSlide 5s linear infinite;
+        /* إضافة اللوجو */
+        .category-logo {
+            display: block;
+            margin: 20px auto;
+            width: 200px; /* ضبط حجم اللوجو */
+            height: auto;
+            filter: drop-shadow(0 5px 10px rgba(0, 0, 0, 0.3)); /* ظل خارجي */
+            transition: transform 0.3s ease;
         }
-        @keyframes flagSlide {
-            0% { background-position: 0%; }
-            100% { background-position: 400%; }
+        .category-logo:hover {
+            transform: scale(1.05);
+        }
+        @media (max-width: 480px) {
+            .category-logo {
+                width: 150px; /* تقليل حجم اللوجو على الأجهزة المحمولة */
+            }
         }
         .category {
             display: grid;
@@ -406,8 +403,8 @@
                     <button class="add animationTop delay-08" onclick="playSound()">Play</button>
                 </div>
             </div>
-            <!-- "Free Palestine" مع الإصلاح -->
-            <div class="category-title animationTop delay-09">Free Palestine</div>
+            <!-- إدراج اللوجو بدلاً من النص -->
+            <img src="free_palestine_logo.jpeg" alt="Free Palestine Logo" class="category-logo animationTop delay-09">
             <ul class="category">
                 <li class="animationTop delay-1">
                     <a href="/cdn-cgi/l/email-protection#3e5a5f4c5553515a7e5150575150535f575210514c59" class="link-style">
@@ -525,4 +522,4 @@
         }
     </script>
 </body>
-</html>
+                        </html>
