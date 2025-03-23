@@ -112,7 +112,7 @@
         }
         .banner .content {
             position: absolute;
-            top: 40%; /* رفع المحتوى للأعلى */
+            top: 40%;
             left: 30px;
             color: #fff;
             transform: translate(0, -50%);
@@ -133,13 +133,13 @@
             margin-top: 10px;
             border-radius: 30px;
             border: none;
-            padding: 12px 50px; /* زيادة الحجم */
+            padding: 12px 50px;
             color: #fff;
             font-weight: bold;
-            font-size: 1.2rem; /* زيادة حجم النص */
+            font-size: 1.2rem;
             cursor: pointer;
             transition: all 0.3s ease;
-            box-shadow: 0 5px 15px rgba(217, 4, 4, 0.5); /* إضافة ظل توهج */
+            box-shadow: 0 5px 15px rgba(217, 4, 4, 0.5);
         }
         .banner .add:hover {
             background: linear-gradient(135deg, #FF5733, #D90404);
@@ -150,18 +150,21 @@
             from { opacity: 0; transform: translateX(-50px); }
             to { opacity: 1; transform: translateX(0); }
         }
-        /* تحسين الفئات مع تغيير النص إلى Free Palestine */
+        /* إصلاح عرض "Free Palestine" */
         .category-title {
             font-size: 2rem;
             font-weight: bold;
             text-align: center;
             margin-bottom: 20px;
+            color: #fff; /* لون النص الأبيض */
+            text-shadow: 0 0 5px #D90404, 0 0 10px #D90404; /* ظل نصي أحمر */
+            position: relative;
+            display: inline-block;
+            padding: 10px 20px;
             background: linear-gradient(90deg, #000 25%, #fff 25%, #fff 50%, #D90404 50%, #D90404 75%, #1A3C34 75%); /* ألوان علم فلسطين */
             background-size: 400%;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            border-radius: 10px;
             animation: flagSlide 5s linear infinite;
-            text-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
         }
         @keyframes flagSlide {
             0% { background-position: 0%; }
@@ -403,7 +406,7 @@
                     <button class="add animationTop delay-08" onclick="playSound()">Play</button>
                 </div>
             </div>
-            <!-- تغيير "Category" إلى "Free Palestine" -->
+            <!-- "Free Palestine" مع الإصلاح -->
             <div class="category-title animationTop delay-09">Free Palestine</div>
             <ul class="category">
                 <li class="animationTop delay-1">
